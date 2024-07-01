@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Js-->
+    <script defer src="./js/main.js"></script>
+    <title>Simulador prestamos hipotecarios</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Pre entrega 2 - Simulador Prestamos Hipotecarios</h1>
+    <!-- Quisiera realizar un simulador de prestamos hipotecarios, donde el cliente pueda consultar en cuánto le quedarían las cuotas a pagar, los intereses y evaluación de si cumple los requisitos para acceder al crédito.-->
+
+    <h2>Bienvenido</h2>
+    <h3>Simulá tu préstamo online</h3>
+    <!--<button> Haz click aquí</button> -->
+
+    <section>
+        <h4> Calculá tu préstamo aquí 👇🏼</h4>
+
+        <form id="miReporte" class="container">
+            <fieldset>
+                <legend> Ingresa los siguientes datos: </legend>
+
+                <label> ¿Sos mayor de edad?</label>
+                
+            
+                <label for="rad1">Si
+                <input
+                type="radio"
+                name="edad"
+                id="rad1"
+                value="true" required>
+                </label>
+
+                <label for="rad2">No
+                <input
+                type="radio"
+                name="edad"
+                id="rad2"
+                value="false" required>
+                </label>
+
+                <br>
+                
+                <label>Nombre y Apellido:
+                    <input 
+                        type="text" 
+                        name="nombre" 
+                        id="nombre"
+                        placeholder="Leo Messi"
+                        required>
+                    </label>
+
+                <label>Email:
+                    <input 
+                        type="email" 
+                        name="email" 
+                        id="email"
+                        placeholder="leomessi@gmail.com">
+                    </label>
+
+                <label>DNI:
+                    <input
+                        type="number"
+                        name="dni"
+                        id="dni"
+                        placeholder="12.456.789">
+                </label>
+
+
+                <label for="depto">¿Qué tipo de departamento querés?
+                    <select name="depto" id="depto" required> 
+                        <option value="1">Monoambiente</option>
+                        <option value="2">2 Ambientes</option>
+                        <option value="3">3 Ambientes</option>
+                    </select>
+                </label>
+                
+                <br>
+
+                <label for="ingresos">Ingresos mensuales:
+                    <input
+                        type="number"
+                        name="ingresos"
+                        id="ingresos"
+                        placeholder="150.000"
+                        required>
+                </label>
+
+                <br>
+
+                <label for="prestamo">Monto a prestar:
+                    <input
+                        type="number"
+                        name="prestamo"
+                        id="prestamo"
+                        placeholder="1.000.000"
+                        required>
+                </label>
+
+                <br>
+
+                <label for="cuotas">Seleccione cantidad de cuotas:
+                    <select name="cuotas" id="cuotas" required>
+                        <option value="12">12</option>
+                        <option value="24">24</option>
+                        <option value="36">36</option>
+                    </select>
+                </label>
+
+            </fieldset>
+
+            <section>
+            <input class="boton" type="submit" value="Generar mi reporte" id="generar">
+            <input class="boton" type="button" value="Guardar mi reporte" id="guardar">
+            <input class="boton" type="button" value="Ver último reporte" id="ultimo">
+            <input class="boton" type="button" value="Ver todos los reportes" id="todos">
+            </section>
+        </form>
+    </section>
+
+</body>
+</html>

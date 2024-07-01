@@ -1,0 +1,44 @@
+body h1 {
+    font-size: 20px;
+    text-align: center;
+}
+
+body h2 {
+    font-size: 50px;
+    text-align: center;
+    color: dodgerblue;
+}
+
+body h3 {
+    font-size: 30px;
+    text-align: center;
+    color: #fc4300de;
+}
+
+body h4 {
+    font-size: 20px;
+    text-align: center;
+}
+
+.boton {
+    cursor: pointer;
+}
+
+/* body button {
+    padding: 10px 20px;
+    background-color: #8af08d;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+button:hover {
+    background-color: #4fc953;
+}
+
+button:active {
+    background-color: #ffa786;
+} */
+
