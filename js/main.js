@@ -110,14 +110,69 @@ ingresarDatos = (e) => {
     let nuevoCliente = new Cliente(ingresarNombre, ingresarEmail, ingresarDni, ingresarDepto, ingresarIngresos, ingresarPrestamo, ingresarCuotas)
     clientes.push(nuevoCliente)
 
-    console.log("Funciona")
-    console.log(clientes)
+    mostrarReporte(nuevoCliente)
+    // console.log("Funciona")
+    // console.log(clientes)
 }
 
+
+function mostrarReporte(Cliente) {
+        document.getElementById("reporteCompleto").style.display = "block";
+
+        document.getElementById("reporteNombre").innerHTML = Cliente.nombre;
+        document.getElementById("reporteEmail").innerHTML = Cliente.email;
+        document.getElementById("reporteDni").innerHTML = Cliente.dni;
+        document.getElementById("reporteDepto").innerHTML = Cliente.depto;
+        document.getElementById("reporteMonto").innerHTML = Cliente.montoPrestamo;
+        document.getElementById("reporteCuotas").innerHTML = Cliente.montoCuotas;
+}
 
 let miReporte = document.getElementById("miReporte")
 miReporte.addEventListener("submit", ingresarDatos)
 
+document.getElementById("reporteCompleto").style.display = "none"
+
+
+
+
+
+//Ver todos los reportes
+
+
+function crearReportes(Cliente) {
+
+    let nuevoDiv = document.createElement("div")
+    let valueNombre = document.createElement("p")
+    let labelNombre = document.createElement("p")
+
+    let labelParNombre = document.createTextNode("Nombre Cliente")
+    let contentParNombre = document.createTextNode(Cliente.nombre)
+
+    labelNombre.appendChild(labelParNombre)
+    valueNombre.appendChild(contentParNombre)
+
+    nuevoDiv.appendChild(labelNombre)
+    nuevoDiv.appendChild(valueNombre)
+
+    document.getElementById("reporteUsingCreate").appendChild(nuevoDiv)
+
+
+}
+
+function verTodosLosReportes(){
+    document.getElementById("reporteCompleto").style.display = "none";
+    clientes.forEach(cliente => {
+        
+        crearReportes(cliente)
+        
+    });
+}
+
+let verReportes = document.getElementById("todos")
+verReportes.addEventListener("click", verTodosLosReportes)
+
+
+//filtrar 1 reporte
 
 
 
@@ -127,6 +182,5 @@ miReporte.addEventListener("submit", ingresarDatos)
 // function guardarReportesLocalStorage(Cliente) {
 //    localStorage.
 // }
-
 
 
