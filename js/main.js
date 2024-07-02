@@ -95,10 +95,39 @@ verReportes.addEventListener("click", verTodosLosReportes)
 
 //filtrar 1 reporte
 
+const buscarReporte = document.getElementById("buscarReporte")
+const listaResultado = document.getElementById("listaResultado")
+const noResultados = document.getElementById("noresultados")
+
+const usuarioBusqueda = () => {
+    const busquedaNombre = buscarReporte.value.toLowerCase(); //var busquedaNombre captura lo que escribe el usuario
+    const filtradoNombres = clientes.filter((nombres) => nombres.nombre.toLowerCase().startsWith(busquedaNombre));
+
+    listaResultado.innerHTML = ""
+
+    if(filtradoNombres.length === 0){
+        noResultados.style.display = "block"
+    } else {
+        filtradoNombres.forEach((nombres) => {
+            const li = document.createElement("li")
+            li.textContent = nombres.nombre
+            listaResultado.appendChild(li)
+        })
+        noResultados.style.display = "none"
+    }
+
+    
+
+    if(buscarReporte.value === ""){
+        listaResultado.innerHTML = ""   
+    }
+}
+
+buscarReporte.addEventListener("input", usuarioBusqueda)
+
+//Ver todos los reportes
 
 
-
-//Guardar reportes
 
 // function guardarReportesLocalStorage(Cliente) {
 //    localStorage.

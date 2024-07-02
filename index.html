@@ -115,11 +115,18 @@
             <section>
             <input class="boton" type="submit" value="Generar mi reporte" id="generar">
             <input class="boton" type="button" value="Guardar mi reporte" id="guardar">
-            <input class="boton" type="button" value="Ver último reporte" id="ultimo">
             <input class="boton" type="button" value="Ver todos los reportes" id="todos">
             </section>
         </form>
     </section>
+
+<!--Barra búsqueda por nombre-->
+
+<div class="search-container">
+    <input type="text" id="buscarReporte" placeholder="Buscar por nombre..."/>
+    <ul id="listaResultado" class="lista-resultado"></ul>
+    <p id="noresultados" class="no-resultados">El nombre ingresado no  posee reportes</p>
+</div>
 
     <div id="respuestas">
         <div id="reporte"></div>
@@ -137,6 +144,10 @@
     <p>Cuotas:</p> <p id="reporteCuotas"></p> <br>
 </section>
 <div id="reporteUsingCreate"></div>
+
+
+
+
 
 </body>
 </html>
