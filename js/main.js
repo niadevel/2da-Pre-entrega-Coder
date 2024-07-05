@@ -1,5 +1,6 @@
 //clase reportes, objetos
 let clientes = []
+cargarLocalStorage()
 
 class Cliente {
     static id = 0
@@ -32,6 +33,10 @@ ingresarDatos = (e) => {
 
     let nuevoCliente = new Cliente(ingresarNombre, ingresarEmail, ingresarDni, ingresarDepto, ingresarIngresos, ingresarPrestamo, ingresarCuotas)
     clientes.push(nuevoCliente)
+
+    //guardar en el local storage
+
+    guardarLocalStorage(clientes)
 
     mostrarReporte(nuevoCliente)
     // console.log("Funciona")
@@ -82,7 +87,8 @@ function crearReportes(Cliente) {
 
 function verTodosLosReportes(){
     document.getElementById("reporteCompleto").style.display = "none";
-    clientes.forEach(cliente => {
+    let clientesLocal = obtenerLocalStorage()
+    clientesLocal.forEach(cliente => {
         
         crearReportes(cliente)
         
@@ -125,12 +131,26 @@ const usuarioBusqueda = () => {
 
 buscarReporte.addEventListener("input", usuarioBusqueda)
 
-//Ver todos los reportes
+//Guardar reportes Local Storage
+
+function guardarLocalStorage(clientes) {
+
+const guardarReporte = JSON.stringify(clientes)
+localStorage.setItem("guardarReporte", guardarReporte)
+}
 
 
 
-// function guardarReportesLocalStorage(Cliente) {
-//    localStorage.
-// }
+function obtenerLocalStorage() {
+    const reporteLocalStorage = localStorage.getItem("guardarReporte")
+    const reporteObjeto = JSON.parse(reporteLocalStorage)
+    return reporteObjeto
+}
 
+function cargarLocalStorage() {
+    let clientesLocal = obtenerLocalStorage()
 
+    if (clientesLocal != undefined || clientesLocal != []) {
+        clientes = clientesLocal
+    } 
+}
